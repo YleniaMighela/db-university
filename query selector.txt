@@ -3,14 +3,14 @@ QUERY CON SELECT
 
 1. Selezionare tutti gli studenti nati nel 1990 (160)
 
-SELECT *
+SELECT COUNT(*) AS studenti_1990
 FROM students
 WHERE YEAR (date_of_birth) = 1990
 
 
 2. Selezionare tutti i corsi che valgono pi� di 10 crediti (479)
  
-SELECT *
+SELECT COUNT(*) AS maggiore_10cfu
 FROM courses 
 WHERE cfu > 10
 
@@ -19,7 +19,7 @@ WHERE cfu > 10
 
 SELECT *
 FROM students
-WHERE timestampdiff(year,date_of_birth,CURDATE())>30
+WHERE YEAR (date_of_birth) <= 1994
 
 
 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
@@ -49,13 +49,13 @@ WHERE level = "magistrale"
 
 7. Da quanti dipartimenti � composta l'universit�? (12)
 
-SELECT *
+SELECT COUNT(*)
 FROM departments
 
 
 
 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
 
-SELECT *
+SELECT COUNT(*)
 FROM teachers
 WHERE phone IS NULL
