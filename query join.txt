@@ -34,7 +34,7 @@ WHERE teachers.id = 44
 sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e
 nome
 
-SELECT students.name, students.surname, departments.*
+SELECT students.surname, students.name,  departments.name, degrees.name
 FROM students
 JOIN degrees ON students.degree_id = degrees.id
 JOIN departments ON degrees.department_id = departments.id
